@@ -1,13 +1,13 @@
+// Mirrors the server's public endpoint GET /api/referral/tracker/:referCode
+// (server: services/referral.service.ts → getReferralTrackerStats). The endpoint
+// is unauthenticated, so it deliberately exposes only the code and a count — no
+// referrer PII, value, or per-status breakdown.
 export interface ReferrerInfo {
-  firstName: string;
   referCode: string;
-  referValue: number;
 }
 
 export interface ReferralStats {
   totalReferrals: number;
-  totalValue: number;
-  byStatus: Record<string, number>;
 }
 
 export interface TrackerResponse {
